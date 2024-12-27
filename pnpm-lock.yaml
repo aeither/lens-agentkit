@@ -1,0 +1,434 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@lens-network/sdk':
+        specifier: 0.0.0-canary-20241203140504
+        version: 0.0.0-canary-20241203140504(viem@2.21.57(typescript@5.7.2)(zod@3.24.1))
+      '@lens-protocol/client':
+        specifier: 0.0.0-canary-20241227112802
+        version: 0.0.0-canary-20241227112802(@lens-network/sdk@0.0.0-canary-20241203140504(viem@2.21.57(typescript@5.7.2)(zod@3.24.1)))(graphql@16.10.0)(typescript@5.7.2)(viem@2.21.57(typescript@5.7.2)(zod@3.24.1))
+      urql:
+        specifier: ^4.2.1
+        version: 4.2.1(@urql/core@5.1.0(graphql@16.10.0))(react@19.0.0)
+      viem:
+        specifier: '2'
+        version: 2.21.57(typescript@5.7.2)(zod@3.24.1)
+
+packages:
+
+  '@0no-co/graphql.web@1.0.12':
+    resolution: {integrity: sha512-BTDjjsV/zSPy5fqItwm+KWUfh9CSe9tTtR6rCB72ddtkAxdcHbi4Ir4r/L1Et4lyxmL+i7Rb3m9sjLLi9tYrzA==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    peerDependenciesMeta:
+      graphql:
+        optional: true
+
+  '@0no-co/graphqlsp@1.12.16':
+    resolution: {integrity: sha512-B5pyYVH93Etv7xjT6IfB7QtMBdaaC07yjbhN6v8H7KgFStMkPvi+oWYBTibMFRMY89qwc9H8YixXg8SXDVgYWw==}
+    peerDependencies:
+      graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
+      typescript: ^5.0.0
+
+  '@adraffy/ens-normalize@1.11.0':
+    resolution: {integrity: sha512-/3DDPKHqqIqxUULp8yP4zODUY1i+2xvVWsv8A79xGWdCAG+8sb0hRh0Rk2QyOJUnnbyPUAZYcpBuRe3nS2OIUg==}
+
+  '@gql.tada/cli-utils@1.6.3':
+    resolution: {integrity: sha512-jFFSY8OxYeBxdKi58UzeMXG1tdm4FVjXa8WHIi66Gzu9JWtCE6mqom3a8xkmSw+mVaybFW5EN2WXf1WztJVNyQ==}
+    peerDependencies:
+      '@0no-co/graphqlsp': ^1.12.13
+      '@gql.tada/svelte-support': 1.0.1
+      '@gql.tada/vue-support': 1.0.1
+      graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
+      typescript: ^5.0.0
+    peerDependenciesMeta:
+      '@gql.tada/svelte-support':
+        optional: true
+      '@gql.tada/vue-support':
+        optional: true
+
+  '@gql.tada/internal@1.0.8':
+    resolution: {integrity: sha512-XYdxJhtHC5WtZfdDqtKjcQ4d7R1s0d1rnlSs3OcBEUbYiPoJJfZU7tWsVXuv047Z6msvmr4ompJ7eLSK5Km57g==}
+    peerDependencies:
+      graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
+      typescript: ^5.0.0
+
+  '@lens-network/sdk@0.0.0-canary-20241203140504':
+    resolution: {integrity: sha512-w5mNEXQTP0pSkCq6b8sgM2/87dad1gFTP7hbaDxy4lXnM1fBrVA5OzxWRfCIJJY8/NGdw4RYhEzJoXf4IRR97w==}
+    engines: {node: '>=18', pnpm: '>=9.1.2'}
+    peerDependencies:
+      ethers: ^6.12.1
+      viem: ^2.12.0
+      zksync-ethers: ^6.7.1
+    peerDependenciesMeta:
+      ethers:
+        optional: true
+      viem:
+        optional: true
+      zksync-ethers:
+        optional: true
+
+  '@lens-protocol/client@0.0.0-canary-20241227112802':
+    resolution: {integrity: sha512-rH1oBuJ/a9y/tzpx1Ijt3wzzeiWEJIBOEoEeOxSpgHTcaZ8QFloIiz/LC6cw8MqdPciIVQltFr/S2MPSmLGALw==}
+    peerDependencies:
+      '@lens-network/sdk': canary
+      ethers: ^6.13.4
+      viem: ^2.21.53
+      zksync-ethers: ^6.15.3
+    peerDependenciesMeta:
+      '@lens-network/sdk':
+        optional: true
+      ethers:
+        optional: true
+      viem:
+        optional: true
+      zksync-ethers:
+        optional: true
+
+  '@lens-protocol/env@0.0.0-canary-20241227112802':
+    resolution: {integrity: sha512-J+vPdL+OWO7qgM44jrIxjG+9Oa4VLIDBzNcCrzQnJ/pUewL7yW+Bb7q+ZY7qC7zSRMhIeSME5TmjLyNnlulf5g==}
+
+  '@lens-protocol/graphql@0.0.0-canary-20241227112802':
+    resolution: {integrity: sha512-39RSIwnMXG87LSfFRQeZXMzeyI+9TLt3L4wEDyi2kMF5mlzPKWHU3k6XZUDNNT+D17RRH3pRkO19KCtwiB/u0w==}
+
+  '@lens-protocol/storage@0.0.0-canary-20241227112802':
+    resolution: {integrity: sha512-FI4LN2XF9Nv4qBJF/EECskz78A9IP+c+KxTil0IebDrLW7tMPf5jXyRSEgPmE0eiHB7WFxBlWnfFo+tDDFSgbw==}
+
+  '@lens-protocol/types@0.0.0-canary-20241227112802':
+    resolution: {integrity: sha512-G4l5AaV/4A9KDkIKPabvMwbA8SX/CdoZJuZBpSIakuqcKQpWGO3pXzkv68qm+gnVi5Btl/iEFNkDQ1velmhEqQ==}
+
+  '@noble/curves@1.7.0':
+    resolution: {integrity: sha512-UTMhXK9SeDhFJVrHeUJ5uZlI6ajXg10O6Ddocf9S6GjbSBVZsJo88HzKwXznNfGpMTRDyJkqMjNDPYgf0qFWnw==}
+    engines: {node: ^14.21.3 || >=16}
+
+  '@noble/hashes@1.6.0':
+    resolution: {integrity: sha512-YUULf0Uk4/mAA89w+k3+yUYh6NrEvxZa5T6SY3wlMvE2chHkxFUUIDI8/XW1QSC357iA5pSnqt7XEhvFOqmDyQ==}
+    engines: {node: ^14.21.3 || >=16}
+
+  '@noble/hashes@1.6.1':
+    resolution: {integrity: sha512-pq5D8h10hHBjyqX+cfBm0i8JUXJ0UhczFc4r74zbuT9XgewFo2E3J1cOaGtdZynILNmQ685YWGzGE1Zv6io50w==}
+    engines: {node: ^14.21.3 || >=16}
+
+  '@rollup/rollup-linux-x64-gnu@4.29.1':
+    resolution: {integrity: sha512-87xYCwb0cPGZFoGiErT1eDcssByaLX4fc0z2nRM6eMtV9njAfEE6OW3UniAoDhX4Iq5xQVpE6qO9aJbCFumKYQ==}
+    cpu: [x64]
+    os: [linux]
+
+  '@scure/base@1.2.1':
+    resolution: {integrity: sha512-DGmGtC8Tt63J5GfHgfl5CuAXh96VF/LD8K9Hr/Gv0J2lAoRGlPOMpqMpMbCTOoOJMZCk2Xt+DskdDyn6dEFdzQ==}
+
+  '@scure/bip32@1.6.0':
+    resolution: {integrity: sha512-82q1QfklrUUdXJzjuRU7iG7D7XiFx5PHYVS0+oeNKhyDLT7WPqs6pBcM2W5ZdwOwKCwoE1Vy1se+DHjcXwCYnA==}
+
+  '@scure/bip39@1.5.0':
+    resolution: {integrity: sha512-Dop+ASYhnrwm9+HA/HwXg7j2ZqM6yk2fyLWb5znexjctFY3+E+eU8cIWI0Pql0Qx4hPZCijlGq4OL71g+Uz30A==}
+
+  '@urql/core@5.1.0':
+    resolution: {integrity: sha512-yC3sw8yqjbX45GbXxfiBY8GLYCiyW/hLBbQF9l3TJrv4ro00Y0ChkKaD9I2KntRxAVm9IYBqh0awX8fwWAe/Yw==}
+
+  '@urql/exchange-auth@2.2.0':
+    resolution: {integrity: sha512-4bJR22EYa/flbhwMBj4lU8MI4cO3ddo/DX7FygWeaeHZU+RWfnQKifCKwxIYlnoV8/CgYRM4lFSMIByYlhmWcg==}
+    peerDependencies:
+      '@urql/core': ^5.0.0
+
+  abitype@1.0.7:
+    resolution: {integrity: sha512-ZfYYSktDQUwc2eduYu8C4wOs+RDPmnRYMh7zNfzeMtGGgb0U+6tLGjixUic6mXf5xKKCcgT5Qp6cv39tOARVFw==}
+    peerDependencies:
+      typescript: '>=5.0.4'
+      zod: ^3 >=3.22.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+      zod:
+        optional: true
+
+  eventemitter3@5.0.1:
+    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+
+  gql.tada@1.8.10:
+    resolution: {integrity: sha512-FrvSxgz838FYVPgZHGOSgbpOjhR+yq44rCzww3oOPJYi0OvBJjAgCiP6LEokZIYND2fUTXzQAyLgcvgw1yNP5A==}
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
+
+  graphql@16.10.0:
+    resolution: {integrity: sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ==}
+    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+
+  isows@1.0.6:
+    resolution: {integrity: sha512-lPHCayd40oW98/I0uvgaHKWCSvkzY27LjWLbtzOm64yQ+G3Q5npjjbdppU65iZXkK1Zt+kH9pfegli0AYfwYYw==}
+    peerDependencies:
+      ws: '*'
+
+  jwt-decode@4.0.0:
+    resolution: {integrity: sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==}
+    engines: {node: '>=18'}
+
+  loglevel@1.9.2:
+    resolution: {integrity: sha512-HgMmCqIJSAKqo68l0rS2AanEWfkxaZ5wNiEFb5ggm08lDs9Xl2KxBlX3PTcaD2chBM1gXAYf491/M2Rv8Jwayg==}
+    engines: {node: '>= 0.6.0'}
+
+  neverthrow@8.1.1:
+    resolution: {integrity: sha512-DpbZ/UDI0B+TxJB1JysXSfi1++3YK2xLBqQLTlRN0b4zxlZ2MoiB+dKKV8dMRzt1fAFjRKDknXOVJgpl+a4Amw==}
+    engines: {node: '>=18'}
+
+  ox@0.1.2:
+    resolution: {integrity: sha512-ak/8K0Rtphg9vnRJlbOdaX9R7cmxD2MiSthjWGaQdMk3D7hrAlDoM+6Lxn7hN52Za3vrXfZ7enfke/5WjolDww==}
+    peerDependencies:
+      typescript: '>=5.4.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  react@19.0.0:
+    resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
+    engines: {node: '>=0.10.0'}
+
+  type-fest@4.31.0:
+    resolution: {integrity: sha512-yCxltHW07Nkhv/1F6wWBr8kz+5BGMfP+RbRSYFnegVb0qV/UMT0G0ElBloPVerqn4M2ZV80Ir1FtCcYv1cT6vQ==}
+    engines: {node: '>=16'}
+
+  typescript@5.7.2:
+    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  urql@4.2.1:
+    resolution: {integrity: sha512-Y/cVi1rsR96kbF3VX6YgfHw1V3kJ287nR1TqpjGzVPyAmXuwRvBvABI+sHY2WOquWCNh+kvFapM/LLYeiC3wig==}
+    peerDependencies:
+      '@urql/core': ^5.0.0
+      react: '>= 16.8.0'
+
+  viem@2.21.57:
+    resolution: {integrity: sha512-Mw4f4Dw0+Y/wSHdynVmP4uh+Cw15HEoj8BOKvKH5nGA6oFZYRxSy9Ruu7ZG8jexeAVCZ57aIuXb0gNg6Vb1x0g==}
+    peerDependencies:
+      typescript: '>=5.0.4'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  webauthn-p256@0.0.10:
+    resolution: {integrity: sha512-EeYD+gmIT80YkSIDb2iWq0lq2zbHo1CxHlQTeJ+KkCILWpVy3zASH3ByD4bopzfk0uCwXxLqKGLqp2W4O28VFA==}
+
+  wonka@6.3.4:
+    resolution: {integrity: sha512-CjpbqNtBGNAeyNS/9W6q3kSkKE52+FjIj7AkFlLr11s/VWGUu6a2CdYSdGxocIhIVjaW/zchesBQUKPVU69Cqg==}
+
+  ws@8.18.0:
+    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
+  zod@3.24.1:
+    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
+
+snapshots:
+
+  '@0no-co/graphql.web@1.0.12(graphql@16.10.0)':
+    optionalDependencies:
+      graphql: 16.10.0
+
+  '@0no-co/graphqlsp@1.12.16(graphql@16.10.0)(typescript@5.7.2)':
+    dependencies:
+      '@gql.tada/internal': 1.0.8(graphql@16.10.0)(typescript@5.7.2)
+      graphql: 16.10.0
+      typescript: 5.7.2
+
+  '@adraffy/ens-normalize@1.11.0': {}
+
+  '@gql.tada/cli-utils@1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.10.0)(typescript@5.7.2))(graphql@16.10.0)(typescript@5.7.2)':
+    dependencies:
+      '@0no-co/graphqlsp': 1.12.16(graphql@16.10.0)(typescript@5.7.2)
+      '@gql.tada/internal': 1.0.8(graphql@16.10.0)(typescript@5.7.2)
+      graphql: 16.10.0
+      typescript: 5.7.2
+
+  '@gql.tada/internal@1.0.8(graphql@16.10.0)(typescript@5.7.2)':
+    dependencies:
+      '@0no-co/graphql.web': 1.0.12(graphql@16.10.0)
+      graphql: 16.10.0
+      typescript: 5.7.2
+
+  '@lens-network/sdk@0.0.0-canary-20241203140504(viem@2.21.57(typescript@5.7.2)(zod@3.24.1))':
+    optionalDependencies:
+      viem: 2.21.57(typescript@5.7.2)(zod@3.24.1)
+
+  '@lens-protocol/client@0.0.0-canary-20241227112802(@lens-network/sdk@0.0.0-canary-20241203140504(viem@2.21.57(typescript@5.7.2)(zod@3.24.1)))(graphql@16.10.0)(typescript@5.7.2)(viem@2.21.57(typescript@5.7.2)(zod@3.24.1))':
+    dependencies:
+      '@lens-protocol/env': 0.0.0-canary-20241227112802
+      '@lens-protocol/graphql': 0.0.0-canary-20241227112802(typescript@5.7.2)
+      '@lens-protocol/storage': 0.0.0-canary-20241227112802
+      '@lens-protocol/types': 0.0.0-canary-20241227112802
+      '@urql/core': 5.1.0(graphql@16.10.0)
+      '@urql/exchange-auth': 2.2.0(@urql/core@5.1.0(graphql@16.10.0))
+      jwt-decode: 4.0.0
+      loglevel: 1.9.2
+    optionalDependencies:
+      '@lens-network/sdk': 0.0.0-canary-20241203140504(viem@2.21.57(typescript@5.7.2)(zod@3.24.1))
+      viem: 2.21.57(typescript@5.7.2)(zod@3.24.1)
+    transitivePeerDependencies:
+      - '@gql.tada/svelte-support'
+      - '@gql.tada/vue-support'
+      - graphql
+      - typescript
+
+  '@lens-protocol/env@0.0.0-canary-20241227112802':
+    dependencies:
+      '@lens-protocol/types': 0.0.0-canary-20241227112802
+
+  '@lens-protocol/graphql@0.0.0-canary-20241227112802(typescript@5.7.2)':
+    dependencies:
+      '@lens-protocol/types': 0.0.0-canary-20241227112802
+      gql.tada: 1.8.10(graphql@16.10.0)(typescript@5.7.2)
+      graphql: 16.10.0
+    transitivePeerDependencies:
+      - '@gql.tada/svelte-support'
+      - '@gql.tada/vue-support'
+      - typescript
+
+  '@lens-protocol/storage@0.0.0-canary-20241227112802':
+    dependencies:
+      '@lens-protocol/types': 0.0.0-canary-20241227112802
+      zod: 3.24.1
+
+  '@lens-protocol/types@0.0.0-canary-20241227112802':
+    dependencies:
+      neverthrow: 8.1.1
+      type-fest: 4.31.0
+
+  '@noble/curves@1.7.0':
+    dependencies:
+      '@noble/hashes': 1.6.0
+
+  '@noble/hashes@1.6.0': {}
+
+  '@noble/hashes@1.6.1': {}
+
+  '@rollup/rollup-linux-x64-gnu@4.29.1':
+    optional: true
+
+  '@scure/base@1.2.1': {}
+
+  '@scure/bip32@1.6.0':
+    dependencies:
+      '@noble/curves': 1.7.0
+      '@noble/hashes': 1.6.1
+      '@scure/base': 1.2.1
+
+  '@scure/bip39@1.5.0':
+    dependencies:
+      '@noble/hashes': 1.6.1
+      '@scure/base': 1.2.1
+
+  '@urql/core@5.1.0(graphql@16.10.0)':
+    dependencies:
+      '@0no-co/graphql.web': 1.0.12(graphql@16.10.0)
+      wonka: 6.3.4
+    transitivePeerDependencies:
+      - graphql
+
+  '@urql/exchange-auth@2.2.0(@urql/core@5.1.0(graphql@16.10.0))':
+    dependencies:
+      '@urql/core': 5.1.0(graphql@16.10.0)
+      wonka: 6.3.4
+
+  abitype@1.0.7(typescript@5.7.2)(zod@3.24.1):
+    optionalDependencies:
+      typescript: 5.7.2
+      zod: 3.24.1
+
+  eventemitter3@5.0.1: {}
+
+  gql.tada@1.8.10(graphql@16.10.0)(typescript@5.7.2):
+    dependencies:
+      '@0no-co/graphql.web': 1.0.12(graphql@16.10.0)
+      '@0no-co/graphqlsp': 1.12.16(graphql@16.10.0)(typescript@5.7.2)
+      '@gql.tada/cli-utils': 1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.10.0)(typescript@5.7.2))(graphql@16.10.0)(typescript@5.7.2)
+      '@gql.tada/internal': 1.0.8(graphql@16.10.0)(typescript@5.7.2)
+      typescript: 5.7.2
+    transitivePeerDependencies:
+      - '@gql.tada/svelte-support'
+      - '@gql.tada/vue-support'
+      - graphql
+
+  graphql@16.10.0: {}
+
+  isows@1.0.6(ws@8.18.0):
+    dependencies:
+      ws: 8.18.0
+
+  jwt-decode@4.0.0: {}
+
+  loglevel@1.9.2: {}
+
+  neverthrow@8.1.1:
+    optionalDependencies:
+      '@rollup/rollup-linux-x64-gnu': 4.29.1
+
+  ox@0.1.2(typescript@5.7.2)(zod@3.24.1):
+    dependencies:
+      '@adraffy/ens-normalize': 1.11.0
+      '@noble/curves': 1.7.0
+      '@noble/hashes': 1.6.1
+      '@scure/bip32': 1.6.0
+      '@scure/bip39': 1.5.0
+      abitype: 1.0.7(typescript@5.7.2)(zod@3.24.1)
+      eventemitter3: 5.0.1
+    optionalDependencies:
+      typescript: 5.7.2
+    transitivePeerDependencies:
+      - zod
+
+  react@19.0.0: {}
+
+  type-fest@4.31.0: {}
+
+  typescript@5.7.2: {}
+
+  urql@4.2.1(@urql/core@5.1.0(graphql@16.10.0))(react@19.0.0):
+    dependencies:
+      '@urql/core': 5.1.0(graphql@16.10.0)
+      react: 19.0.0
+      wonka: 6.3.4
+
+  viem@2.21.57(typescript@5.7.2)(zod@3.24.1):
+    dependencies:
+      '@noble/curves': 1.7.0
+      '@noble/hashes': 1.6.1
+      '@scure/bip32': 1.6.0
+      '@scure/bip39': 1.5.0
+      abitype: 1.0.7(typescript@5.7.2)(zod@3.24.1)
+      isows: 1.0.6(ws@8.18.0)
+      ox: 0.1.2(typescript@5.7.2)(zod@3.24.1)
+      webauthn-p256: 0.0.10
+      ws: 8.18.0
+    optionalDependencies:
+      typescript: 5.7.2
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+      - zod
+
+  webauthn-p256@0.0.10:
+    dependencies:
+      '@noble/curves': 1.7.0
+      '@noble/hashes': 1.6.1
+
+  wonka@6.3.4: {}
+
+  ws@8.18.0: {}
+
+  zod@3.24.1: {}
