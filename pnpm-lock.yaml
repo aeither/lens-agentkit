@@ -14,6 +14,9 @@ importers:
       '@lens-protocol/client':
         specifier: 0.0.0-canary-20241227112802
         version: 0.0.0-canary-20241227112802(@lens-network/sdk@0.0.0-canary-20241203140504(viem@2.21.57(typescript@5.7.2)(zod@3.24.1)))(graphql@16.10.0)(typescript@5.7.2)(viem@2.21.57(typescript@5.7.2)(zod@3.24.1))
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
       urql:
         specifier: ^4.2.1
         version: 4.2.1(@urql/core@5.1.0(graphql@16.10.0))(react@19.0.0)
@@ -148,6 +151,10 @@ packages:
         optional: true
       zod:
         optional: true
+
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+    engines: {node: '>=12'}
 
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
@@ -349,6 +356,8 @@ snapshots:
     optionalDependencies:
       typescript: 5.7.2
       zod: 3.24.1
+
+  dotenv@16.4.7: {}
 
   eventemitter3@5.0.1: {}
 
