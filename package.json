@@ -2,9 +2,14 @@
 	"dependencies": {
 		"@lens-network/sdk": "0.0.0-canary-20241203140504",
 		"@lens-protocol/client": "0.0.0-canary-20241227112802",
+		"@lens-protocol/metadata": "2.0.0-next.2",
+		"@lens-protocol/storage-node-client": "0.0.0-latest-20241209200445",
 		"dotenv": "^16.4.7",
 		"urql": "^4.2.1",
 		"viem": "2"
 	},
-	"packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387"
+	"packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387",
+	"devDependencies": {
+		"@types/node": "^22.10.2"
+	}
 }
