@@ -1,4 +1,4 @@
-import { evmAddress } from "@lens-protocol/client";
+import { Ok, evmAddress } from "@lens-protocol/client";
 import { fetchAccountsAvailable } from "@lens-protocol/client/actions";
 
 import { client } from "../lens-protocol/publicClient";
@@ -11,7 +11,11 @@ async function main() {
         managedBy: evmAddress(process.env.PUBLIC_KEY),
         includeOwned: true,
     });
-    console.log("🚀 ~ main ~ result:", result)
+
+    if (result instanceof Ok) {
+        console.log("Items:", result.value.items[0].account.username);
+    }
 }
+
 
 main();
