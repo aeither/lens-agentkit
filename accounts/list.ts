@@ -14,7 +14,7 @@ async function main() {
 
     if (result instanceof Ok) {
         console.log("Items:", result.value.items);
-        console.log("Items:", result.value.items[0].account.metadata);
+        console.log("Items:", result.value.items[1].account.metadata);
     }
 }
 
