@@ -18,8 +18,8 @@ importers:
         specifier: 2.0.0-next.2
         version: 2.0.0-next.2(zod@3.24.1)
       '@lens-protocol/storage-node-client':
-        specifier: 0.0.0-latest-20241209200445
-        version: 0.0.0-latest-20241209200445
+        specifier: 0.0.0-next-20241217195719
+        version: 0.0.0-next-20241217195719
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
@@ -120,8 +120,8 @@ packages:
       zod:
         optional: true
 
-  '@lens-protocol/storage-node-client@0.0.0-latest-20241209200445':
-    resolution: {integrity: sha512-PgwFkDDy9E9qzs+LGgLkltF5XXwX6zzXdx0iMMyuyDR/k/P4AXC+YKznRp668gT7I2Co8rFNdK9Dap3GTUkcZg==}
+  '@lens-protocol/storage-node-client@0.0.0-next-20241217195719':
+    resolution: {integrity: sha512-jWonPI26JViuAN54rjhhpC1jw9bkSmjnY7xqYUEmwdza/P6Noh5GXQLaHvyi9QgrQ7RO8Iw7ObgcTK2oHD84MA==}
 
   '@lens-protocol/storage@0.0.0-canary-20241227112802':
     resolution: {integrity: sha512-FI4LN2XF9Nv4qBJF/EECskz78A9IP+c+KxTil0IebDrLW7tMPf5jXyRSEgPmE0eiHB7WFxBlWnfFo+tDDFSgbw==}
@@ -421,7 +421,7 @@ snapshots:
     optionalDependencies:
       zod: 3.24.1
 
-  '@lens-protocol/storage-node-client@0.0.0-latest-20241209200445': {}
+  '@lens-protocol/storage-node-client@0.0.0-next-20241217195719': {}
 
   '@lens-protocol/storage@0.0.0-canary-20241227112802':
     dependencies:

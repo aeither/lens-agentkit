@@ -3,7 +3,7 @@
 		"@lens-network/sdk": "0.0.0-canary-20241203140504",
 		"@lens-protocol/client": "0.0.0-canary-20241227112802",
 		"@lens-protocol/metadata": "2.0.0-next.2",
-		"@lens-protocol/storage-node-client": "0.0.0-latest-20241209200445",
+		"@lens-protocol/storage-node-client": "0.0.0-next-20241217195719",
 		"dotenv": "^16.4.7",
 		"urql": "^4.2.1",
 		"viem": "2"
