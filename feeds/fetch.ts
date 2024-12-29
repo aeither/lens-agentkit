@@ -15,43 +15,28 @@ const client = new Client({
 });
 
 const query = gql`
-query {
-  accounts(
-    request: {
-      filter: {
-        searchBy: {
-          localNameQuery: "john.doe.1735342542408"
-
-          # Optional. Defaults to lens/* namespace.
-          # namespace: EvmAddress
+  query GetPosts($request: PostsRequest!) {
+    posts(request: $request) {
+      items {
+        ... on Post {
+          id
+          timestamp
+          slug
         }
       }
-      orderBy: ACCOUNT_SCORE # other options: ALPHABETICAL, BEST_MATCH
-    }
-  ) {
-    items {
-      address
-      username {
-        value
-      }
-      metadata {
-        name
-        picture
-      }
-    }
-    pageInfo {
-      prev
-      next
     }
   }
-}
 `;
 
 const variables = {
-    "request": {
-        "pageSize": "TEN",
+    request: {
+        filter: {
+            authors: ["0xD592BDFA321d70F5835b5EEf29755d6F793aAE40"]
+        },
+        pageSize: "TEN"
     }
-}
+};
+
 
 async function main() {
     const result = await client.query(query, variables).toPromise();
