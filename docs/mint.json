@@ -1,0 +1,70 @@
+{
+	"$schema": "https://mintlify.com/schema.json",
+	"name": "GOAT",
+	"logo": {
+		"dark": "/logo/goat-dark.svg",
+		"light": "/logo/goat-light.svg"
+	},
+	"favicon": "/favicon.svg",
+	"colors": {
+		"primary": "#000000",
+		"light": "#ffffff",
+		"dark": "#000000",
+		"anchors": {
+			"from": "#000000",
+			"to": "#000000"
+		}
+	},
+	"font": {
+		"headings": {
+			"family": "Lexend"
+		},
+		"body": {
+			"family": "Lexend"
+		}
+	},
+	"tabs": [
+		{
+			"name": "Changelog",
+			"url": "changelog"
+		}
+	],
+	"anchors": [
+		{
+			"name": "Github",
+			"icon": "github",
+			"url": "https://github.com/goat-sdk/goat"
+		},
+		{
+			"name": "Discord",
+			"icon": "discord",
+			"url": "https://discord.gg/goat-sdk"
+		},
+        {
+			"name": "X",
+			"icon": "twitter",
+			"url": "https://x.com/goat_sdk"
+		},
+		{
+			"name": "Goats",
+			"icon": "youtube",
+			"url": "https://youtu.be/5IuRzJRrRpQ"
+		}
+	],
+	"navigation": [
+		{
+			"group": "Overview",
+			"pages": [
+				"introduction",
+				"chains-wallets-plugins",
+				"examples",
+				"plugins",
+				"wallets",
+				"chains"
+			]
+		}
+	],
+	"footerSocials": {
+		"github": "https://github.com/goat-sdk"
+	}
+}
