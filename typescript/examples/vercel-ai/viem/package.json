@@ -9,13 +9,15 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
+        "@ai-sdk/groq": "1.0.9",
         "@ai-sdk/openai": "^1.0.4",
         "@goat-sdk/adapter-vercel-ai": "workspace:*",
         "@goat-sdk/core": "workspace:*",
-        "@goat-sdk/plugin-erc20": "workspace:*",
         "@goat-sdk/plugin-erc721": "workspace:*",
+        "@goat-sdk/plugin-lens": "workspace:*",
         "@goat-sdk/wallet-evm": "workspace:*",
         "@goat-sdk/wallet-viem": "workspace:*",
+        "@lens-network/sdk": "0.0.0-canary-20241203140504",
         "ai": "catalog:",
         "dotenv": "^16.4.5",
         "viem": "2.21.49"

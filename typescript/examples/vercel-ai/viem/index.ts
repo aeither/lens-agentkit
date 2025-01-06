@@ -1,15 +1,14 @@
-import { openai } from "@ai-sdk/openai";
+import { createGroq } from "@ai-sdk/groq";
 import { generateText } from "ai";
 
 import { createWalletClient, http } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { sepolia } from "viem/chains";
 
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
 import { PEPE, USDC, erc20 } from "@goat-sdk/plugin-lens";
 
-import { sendETH } from "@goat-sdk/wallet-evm";
 import { viem } from "@goat-sdk/wallet-viem";
+import { chains } from "@lens-network/sdk/viem";
 
 require("dotenv").config();
 
@@ -17,21 +16,26 @@ const account = privateKeyToAccount(process.env.WALLET_PRIVATE_KEY as `0x${strin
 
 const walletClient = createWalletClient({
     account: account,
-    transport: http(process.env.RPC_PROVIDER_URL),
-    chain: sepolia,
+    transport: http(),
+    chain: chains.testnet,
+});
+
+const groq = createGroq({
+    baseURL: "https://api.groq.com/openai/v1",
+    apiKey: process.env.GROQ_API_KEY,
 });
 
 (async () => {
     const tools = await getOnChainTools({
         wallet: viem(walletClient),
-        plugins: [sendETH(), erc20({ tokens: [USDC, PEPE] })],
+        plugins: [erc20({ tokens: [USDC, PEPE] })],
     });
 
     const result = await generateText({
-        model: openai("gpt-4o-mini"),
+        model: groq("llama-3.3-70b-versatile"),
         tools: tools,
         maxSteps: 5,
-        prompt: "Get the balance of the USDC token",
+        prompt: "Get balance of the USDC token for my address",
     });
 
     console.log(result.text);
