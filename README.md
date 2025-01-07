@@ -136,4 +136,6 @@ The SDK addresses key challenges including complex integration requirements, hig
 
 ![screenshot1](https://github.com/user-attachments/assets/a1079aa5-e51a-4ce5-8564-aaf1763e6015)
 
+Create wallet https://block-explorer.testnet.lens.dev/tx/0x45e5d75d2ea0cb9a1d2c1306b390e6495e38797b1050663266af18918a87d494
 
+![screenshot2](https://github.com/user-attachments/assets/a107e997-b9d1-4041-9bfe-f6f6d913511a)
