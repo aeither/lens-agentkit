@@ -1,6 +1,6 @@
-# Lens AI AgentKit
+# Lens Protocol AI Tools SDK for Building AI Agents
 
-test
+A comprehensive AI-powered SDK for seamless interaction with Lens Protocol through natural language processing, built as a GOAT plugin for universal AI agent framework compatibility.
 
 ## Instruction
 
@@ -25,11 +25,6 @@ cp .env.template .env
 ```
 npx ts-node index.ts
 ```
-
-
-# Lens Protocol AI Tools SDK
-
-A comprehensive AI-powered SDK for seamless interaction with Lens Protocol through natural language processing, built as a GOAT plugin for universal AI agent framework compatibility.
 
 ## Problem
 * Complex integration requirements for Lens Protocol
