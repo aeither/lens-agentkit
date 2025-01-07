@@ -5,6 +5,10 @@
 
 A comprehensive AI-powered SDK for seamless interaction with Lens Protocol through natural language processing, built as a GOAT plugin for universal AI agent framework compatibility.
 
+## Demo
+
+https://youtu.be/Mxo_4tHSUeA
+
 ## Instruction
 
 ```sh
