@@ -127,7 +127,7 @@ importers:
         version: 0.0.0-canary-20241203140504(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(viem@2.21.49(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.24.1))
       '@lens-protocol/client':
         specifier: 2.3.2
-        version: 2.3.2(@lens-protocol/metadata@1.2.0(zod@3.24.1))(@types/react@18.3.18)(bufferutil@4.0.9)(encoding@0.1.13)(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react@18.3.1)(utf-8-validate@5.0.10)
+        version: 2.3.2(@lens-protocol/metadata@2.0.0-next.2(zod@3.24.1))(@types/react@18.3.18)(bufferutil@4.0.9)(encoding@0.1.13)(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react@18.3.1)(utf-8-validate@5.0.10)
       ai:
         specifier: 'catalog:'
         version: 4.0.3(react@18.3.1)(zod@3.24.1)
@@ -241,6 +241,15 @@ importers:
       '@lens-protocol/client':
         specifier: 0.0.0-canary-20250106125643
         version: 0.0.0-canary-20250106125643(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.10.0)(typescript@5.6.3)(viem@2.21.49(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8))
+      '@lens-protocol/metadata':
+        specifier: 2.0.0-next.2
+        version: 2.0.0-next.2(zod@3.23.8)
+      '@lens-protocol/storage-node-client':
+        specifier: 0.0.0-latest-20241209200445
+        version: 0.0.0-latest-20241209200445
+      urql:
+        specifier: 4.2.1
+        version: 4.2.1(@urql/core@5.1.0(graphql@16.10.0))(react@18.3.1)
       viem:
         specifier: 'catalog:'
         version: 2.21.49(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)(zod@3.23.8)
@@ -2132,8 +2141,8 @@ packages:
   '@lens-protocol/graphql@0.0.0-canary-20250106125643':
     resolution: {integrity: sha512-jQ/S/jkmLcMKP/hWBVfh0HqvAic/+HR8M30KJ7N8RKnqZA+o+HGHo9lnmBOO3BDZuN/Y7qnKO0IWrpJ4lre4Gg==}
 
-  '@lens-protocol/metadata@1.2.0':
-    resolution: {integrity: sha512-fUB8+GvYiVt1uMqYJi/iN/aw/lzE+oEfpTjraTI87MqWPgYubbx0vFySjJs7uAdI7oftczvlwhthmMUl5DDuGA==}
+  '@lens-protocol/metadata@2.0.0-next.2':
+    resolution: {integrity: sha512-vEL0QZ8rWcHZVo7zmx7Hdp/ANiw4Hml5tt53uE3KTMsZjY8u5TGm8o1DujWwlEzuawWqpduhbb7khQ2mJtmN0g==}
     engines: {node: '>=18 <21'}
     peerDependencies:
       zod: ^3.22.3
@@ -2143,6 +2152,9 @@ packages:
 
   '@lens-protocol/shared-kernel@0.12.0':
     resolution: {integrity: sha512-+trBZPjGDSRMVafZF6jXcfKc8UVHr1bVRjxeAVO1ZpR7zWfampJhxMO+7jbmmhvmYmf5Losp7Ffq4//szKloaA==}
+
+  '@lens-protocol/storage-node-client@0.0.0-latest-20241209200445':
+    resolution: {integrity: sha512-PgwFkDDy9E9qzs+LGgLkltF5XXwX6zzXdx0iMMyuyDR/k/P4AXC+YKznRp668gT7I2Co8rFNdK9Dap3GTUkcZg==}
 
   '@lens-protocol/storage@0.0.0-canary-20250106125643':
     resolution: {integrity: sha512-xRvP5IwFGGS/1AXwI+cQp0raq5k0/xR7uPYi2J2UIKsYLr840hHk9TtTgL0Sij1YamR3kFpjP8ACFmZvQexGAg==}
@@ -7436,6 +7448,12 @@ packages:
   url-parse@1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
 
+  urql@4.2.1:
+    resolution: {integrity: sha512-Y/cVi1rsR96kbF3VX6YgfHw1V3kJ287nR1TqpjGzVPyAmXuwRvBvABI+sHY2WOquWCNh+kvFapM/LLYeiC3wig==}
+    peerDependencies:
+      '@urql/core': ^5.0.0
+      react: '>= 16.8.0'
+
   use-sync-external-store@1.2.0:
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
     peerDependencies:
@@ -9981,7 +9999,7 @@ snapshots:
       - graphql
       - typescript
 
-  '@lens-protocol/client@2.3.2(@lens-protocol/metadata@1.2.0(zod@3.24.1))(@types/react@18.3.18)(bufferutil@4.0.9)(encoding@0.1.13)(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react@18.3.1)(utf-8-validate@5.0.10)':
+  '@lens-protocol/client@2.3.2(@lens-protocol/metadata@2.0.0-next.2(zod@3.24.1))(@types/react@18.3.18)(bufferutil@4.0.9)(encoding@0.1.13)(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react@18.3.1)(utf-8-validate@5.0.10)':
     dependencies:
       '@ethersproject/abi': 5.7.0
       '@ethersproject/abstract-signer': 5.7.0
@@ -9992,7 +10010,7 @@ snapshots:
       '@ethersproject/providers': 5.7.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       '@ethersproject/wallet': 5.7.0
       '@lens-protocol/blockchain-bindings': 0.10.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)
-      '@lens-protocol/gated-content': 0.5.1(@ethersproject/abi@5.7.0)(@ethersproject/address@5.7.0)(@ethersproject/bignumber@5.7.0)(@ethersproject/contracts@5.7.0)(@ethersproject/hash@5.7.0)(@ethersproject/providers@5.7.2(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@ethersproject/wallet@5.7.0)(@lens-protocol/metadata@1.2.0(zod@3.24.1))(@types/react@18.3.18)(bufferutil@4.0.9)(encoding@0.1.13)(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react@18.3.1)(utf-8-validate@5.0.10)(zod@3.24.1)
+      '@lens-protocol/gated-content': 0.5.1(@ethersproject/abi@5.7.0)(@ethersproject/address@5.7.0)(@ethersproject/bignumber@5.7.0)(@ethersproject/contracts@5.7.0)(@ethersproject/hash@5.7.0)(@ethersproject/providers@5.7.2(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@ethersproject/wallet@5.7.0)(@lens-protocol/metadata@2.0.0-next.2(zod@3.24.1))(@types/react@18.3.18)(bufferutil@4.0.9)(encoding@0.1.13)(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react@18.3.1)(utf-8-validate@5.0.10)(zod@3.24.1)
       '@lens-protocol/shared-kernel': 0.12.0
       '@lens-protocol/storage': 0.8.1
       graphql: 16.10.0
@@ -10002,7 +10020,7 @@ snapshots:
       tslib: 2.8.1
       zod: 3.24.1
     optionalDependencies:
-      '@lens-protocol/metadata': 1.2.0(zod@3.24.1)
+      '@lens-protocol/metadata': 2.0.0-next.2(zod@3.24.1)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -10043,7 +10061,7 @@ snapshots:
     dependencies:
       '@lens-protocol/types': 0.0.0-canary-20250106125643
 
-  '@lens-protocol/gated-content@0.5.1(@ethersproject/abi@5.7.0)(@ethersproject/address@5.7.0)(@ethersproject/bignumber@5.7.0)(@ethersproject/contracts@5.7.0)(@ethersproject/hash@5.7.0)(@ethersproject/providers@5.7.2(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@ethersproject/wallet@5.7.0)(@lens-protocol/metadata@1.2.0(zod@3.24.1))(@types/react@18.3.18)(bufferutil@4.0.9)(encoding@0.1.13)(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react@18.3.1)(utf-8-validate@5.0.10)(zod@3.24.1)':
+  '@lens-protocol/gated-content@0.5.1(@ethersproject/abi@5.7.0)(@ethersproject/address@5.7.0)(@ethersproject/bignumber@5.7.0)(@ethersproject/contracts@5.7.0)(@ethersproject/hash@5.7.0)(@ethersproject/providers@5.7.2(bufferutil@4.0.9)(utf-8-validate@5.0.10))(@ethersproject/wallet@5.7.0)(@lens-protocol/metadata@2.0.0-next.2(zod@3.24.1))(@types/react@18.3.18)(bufferutil@4.0.9)(encoding@0.1.13)(ethers@6.13.4(bufferutil@4.0.9)(utf-8-validate@5.0.10))(react@18.3.1)(utf-8-validate@5.0.10)(zod@3.24.1)':
     dependencies:
       '@ethersproject/abi': 5.7.0
       '@ethersproject/address': 5.7.0
@@ -10052,7 +10070,7 @@ snapshots:
       '@ethersproject/hash': 5.7.0
       '@ethersproject/providers': 5.7.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       '@ethersproject/wallet': 5.7.0
-      '@lens-protocol/metadata': 1.2.0(zod@3.24.1)
+      '@lens-protocol/metadata': 2.0.0-next.2(zod@3.24.1)
       '@lens-protocol/shared-kernel': 0.12.0
       '@lens-protocol/storage': 0.8.1
       '@lit-protocol/constants': 2.1.62
@@ -10099,7 +10117,14 @@ snapshots:
       - '@gql.tada/vue-support'
       - typescript
 
-  '@lens-protocol/metadata@1.2.0(zod@3.24.1)':
+  '@lens-protocol/metadata@2.0.0-next.2(zod@3.23.8)':
+    dependencies:
+      json-stable-stringify: 1.2.1
+      uuid: 9.0.1
+    optionalDependencies:
+      zod: 3.23.8
+
+  '@lens-protocol/metadata@2.0.0-next.2(zod@3.24.1)':
     dependencies:
       json-stable-stringify: 1.2.1
       uuid: 9.0.1
@@ -10113,6 +10138,8 @@ snapshots:
       lodash: 4.17.21
       traverse: 0.6.10
       tslib: 2.8.1
+
+  '@lens-protocol/storage-node-client@0.0.0-latest-20241209200445': {}
 
   '@lens-protocol/storage@0.0.0-canary-20250106125643':
     dependencies:
@@ -17573,6 +17600,12 @@ snapshots:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+
+  urql@4.2.1(@urql/core@5.1.0(graphql@16.10.0))(react@18.3.1):
+    dependencies:
+      '@urql/core': 5.1.0(graphql@16.10.0)
+      react: 18.3.1
+      wonka: 6.3.4
 
   use-sync-external-store@1.2.0(react@18.3.1):
     dependencies:

@@ -1,16 +1,7 @@
 import { createToolParameters } from "@goat-sdk/core";
 import { z } from "zod";
 
-export class GetLensAccountsParameters extends createToolParameters(
-    z.object({
-        walletAddress: z.string().describe("The wallet address to fetch Lens Protocol accounts for"),
-        includeOwned: z
-            .boolean()
-            .optional()
-            .default(true)
-            .describe("Whether to include owned accounts in the response"),
-    }),
-) {}
+
 
 export class GetTokenInfoBySymbolParameters extends createToolParameters(
     z.object({

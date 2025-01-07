@@ -1,7 +1,7 @@
 import { createGroq } from "@ai-sdk/groq";
 import { generateText } from "ai";
 
-import { createWalletClient, http } from "viem";
+import { http, createWalletClient } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";

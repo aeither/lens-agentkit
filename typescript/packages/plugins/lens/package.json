@@ -1,7 +1,11 @@
 {
     "name": "@goat-sdk/plugin-lens",
     "version": "0.2.6",
-    "files": ["dist/**/*", "README.md", "package.json"],
+    "files": [
+        "dist/**/*",
+        "README.md",
+        "package.json"
+    ],
     "scripts": {
         "build": "tsup",
         "clean": "rm -rf dist",
@@ -15,6 +19,9 @@
         "@goat-sdk/core": "workspace:*",
         "@goat-sdk/wallet-evm": "workspace:*",
         "@lens-protocol/client": "0.0.0-canary-20250106125643",
+        "@lens-protocol/metadata": "2.0.0-next.2",
+        "@lens-protocol/storage-node-client": "0.0.0-latest-20241209200445",
+        "urql": "4.2.1",
         "viem": "catalog:",
         "zod": "catalog:"
     },
@@ -31,5 +38,9 @@
     "bugs": {
         "url": "https://github.com/goat-sdk/goat/issues"
     },
-    "keywords": ["ai", "agents", "web3"]
+    "keywords": [
+        "ai",
+        "agents",
+        "web3"
+    ]
 }
