@@ -25,7 +25,7 @@ class CreateLensAccountParameters extends createToolParameters(
     z.object({
         name: z.string().describe("The name for the Lens account"),
         username: z.string().describe("The username for the Lens account"),
-        appId: z.string().describe("The app ID for the Lens account"),
+        appId: z.string().default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1").describe("The app ID for the Lens account"),
     }),
 ) { }
 
@@ -46,7 +46,7 @@ class GetLensPostsParameters extends createToolParameters(
 class CreateLensPostParameters extends createToolParameters(
     z.object({
         content: z.string().describe("The text content of the post"),
-        appId: z.string().describe("The app ID for the Lens post"),
+        appId: z.string().default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1").describe("The app ID for the Lens post"),
     }),
 ) { }
 
@@ -57,6 +57,7 @@ class ExploreLensPublicationsParameters extends createToolParameters(
         limit: z.enum(["TEN", "TWENTY", "FIFTY"]).default("TEN").describe("Number of results to return"),
     }),
 ) { }
+
 
 export class LensService {
     private urqlClient: Client;
@@ -240,10 +241,10 @@ export class LensService {
             const variables = {
                 request: {
                     filter: {
-                        authors: parameters.authors
+                        authors: parameters.authors,
                     },
-                    pageSize: parameters.pageSize
-                }
+                    pageSize: parameters.pageSize,
+                },
             };
 
             const result = await this.urqlClient.query(query, variables).toPromise();
@@ -381,11 +382,11 @@ export class LensService {
             const variables = {
                 request: {
                     where: {
-                        publicationTypes: parameters.publicationTypes
+                        publicationTypes: parameters.publicationTypes,
                     },
                     orderBy: parameters.orderBy,
-                    limit: parameters.limit
-                }
+                    limit: parameters.limit,
+                },
             };
 
             const result = await this.urqlClient.query(query, variables).toPromise();
