@@ -49,13 +49,12 @@ export class Erc20Service {
             }
 
             return {
-                accounts: result.value.items.map(item => ({
+                accounts: result.value.items.map((item) => ({
                     ownedBy: item.account.owner,
                     metadata: item.account.metadata,
                 })),
                 pageInfo: result.value.pageInfo,
             };
-
         } catch (error) {
             throw Error(`Failed to fetch Lens accounts: ${error}`);
         }
