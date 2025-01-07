@@ -131,3 +131,9 @@ const prompts = [
 - Advanced AI agent functionality
 
 The SDK addresses key challenges including complex integration requirements, high technical barriers, and limited accessibility to web3 social features through a wallet-agnostic implementation that works seamlessly with major AI frameworks.
+
+## Screenshot
+
+![screenshot1](https://github.com/user-attachments/assets/a1079aa5-e51a-4ce5-8564-aaf1763e6015)
+
+
