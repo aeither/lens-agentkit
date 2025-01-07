@@ -20,7 +20,7 @@
         "@goat-sdk/wallet-evm": "workspace:*",
         "@lens-protocol/client": "0.0.0-canary-20250106125643",
         "@lens-protocol/metadata": "2.0.0-next.2",
-        "@lens-protocol/storage-node-client": "0.0.0-latest-20241209200445",
+        "@lens-protocol/storage-node-client": "0.0.0-next-20241217195719",
         "urql": "4.2.1",
         "viem": "catalog:",
         "zod": "catalog:"

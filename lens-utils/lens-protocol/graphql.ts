@@ -85,7 +85,7 @@ const variables = {
 
 async function main() {
     const result = await client.query(query, variables).toPromise();
-    console.log(result.data);
+    console.log(result.data.explorePublications.items);
 }
 
 main()
