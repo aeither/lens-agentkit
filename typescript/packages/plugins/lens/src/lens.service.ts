@@ -7,7 +7,7 @@ import { handleWith } from "@lens-protocol/client/viem";
 import { account, textOnly } from "@lens-protocol/metadata";
 import { StorageClient, testnet as storageTestnet } from "@lens-protocol/storage-node-client";
 import { Client, cacheExchange, fetchExchange, gql } from "urql";
-import { http, createWalletClient } from "viem";
+import { createWalletClient, http } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { z } from "zod";
 
@@ -22,7 +22,7 @@ class GetLensAccountsParameters extends createToolParameters(
             .default(true)
             .describe("Whether to include owned accounts in the response"),
     }),
-) {}
+) { }
 
 class CreateLensAccountParameters extends createToolParameters(
     z.object({
@@ -34,20 +34,20 @@ class CreateLensAccountParameters extends createToolParameters(
             .default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1")
             .describe("The app ID for the Lens account"),
     }),
-) {}
+) { }
 
 class SearchLensAccountsParameters extends createToolParameters(
     z.object({
         localNameQuery: z.string().describe("The username to search for"),
         pageSize: z.enum(["TEN", "FIFTY"]).optional().default("TEN").describe("Number of results per page"),
     }),
-) {}
+) { }
 
 class GetLensPostsParameters extends createToolParameters(
     z.object({
         authors: z.array(z.string()).describe("Array of author addresses to filter posts by"),
     }),
-) {}
+) { }
 
 class CreateLensPostParameters extends createToolParameters(
     z.object({
@@ -58,7 +58,7 @@ class CreateLensPostParameters extends createToolParameters(
             .default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1")
             .describe("The app ID for the Lens post"),
     }),
-) {}
+) { }
 
 class ExploreLensPublicationsParameters extends createToolParameters(
     z.object({
@@ -68,7 +68,7 @@ class ExploreLensPublicationsParameters extends createToolParameters(
             .describe("Types of publications to explore"),
         orderBy: z.enum(["LATEST"]).default("LATEST").describe("How to order the publications"),
     }),
-) {}
+) { }
 
 export class LensService {
     private urqlClient: Client;
@@ -332,77 +332,27 @@ export class LensService {
     async exploreLensPublications(parameters: ExploreLensPublicationsParameters) {
         try {
             const query = gql`
-            query ExplorePublications($request: ExplorePublicationRequest!) {
-                explorePublications(request: $request) {
-                    items {
-                        ... on Post {
-                            id
-                            publishedOn {
-                                id
-                            }
-                            by {
-                                id
-                                handle {
-                                    fullHandle
-                                }
-                                metadata {
-                                    displayName
-                                    picture {
-                                        ... on ImageSet {
-                                            optimized {
-                                                uri
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            metadata {
-                                ... on TextOnlyMetadataV3 {
-                                    id
-                                    content
-                                    locale
-                                }
-                                ... on ImageMetadataV3 {
-                                    id
-                                    content
-                                    asset {
-                                        image {
-                                            optimized {
-                                                uri
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            stats {
-                                comments
-                                mirrors
-                                quotes
-                                reactions
-                                bookmarks
-                            }
-                            operations {
-                                hasReacted
-                                hasMirrored
-                                hasBookmarked
-                            }
-                            createdAt
-                        }
-                    }
-                    pageInfo {
-                        next
-                        prev
-                    }
-                }
-            }
+            query SearchAccounts( $request: PostsRequest!) {
+                   
+  posts(request: $request) {
+    items {
+      ... on Post {
+        metadata {
+          ... on ArticleMetadata {
+            title
+            content
+          }
+        }
+        id
+        slug
+      }
+    }
+  }
+}
         `;
 
             const variables = {
                 request: {
-                    where: {
-                        publicationTypes: parameters.publicationTypes,
-                    },
-                    orderBy: parameters.orderBy,
                 },
             };
 
@@ -412,7 +362,7 @@ export class LensService {
                 throw new Error(`Query failed: ${result.error.message}`);
             }
 
-            return result.data.explorePublications.items;
+            return result.data.posts.items;
         } catch (error) {
             throw Error(`Failed to explore Lens publications: ${error}`);
         }
