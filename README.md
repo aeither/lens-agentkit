@@ -1,3 +1,6 @@
+
+![lensai](https://github.com/user-attachments/assets/c2b12d4a-686b-4889-be84-006c6da95bac)
+
 # Lens Protocol AI Tools SDK for Building AI Agents
 
 A comprehensive AI-powered SDK for seamless interaction with Lens Protocol through natural language processing, built as a GOAT plugin for universal AI agent framework compatibility.
@@ -55,6 +58,8 @@ A comprehensive SDK that:
 - Fetch author-specific posts
 - Browse publications with advanced filtering
 
+Support Major AI Frameworks: Langchain, Vercel's Al SDK, Eliza...
+
 ## Technical Architecture
 
 **SDK Foundation**
@@ -72,6 +77,8 @@ A comprehensive SDK that:
 
 ## Implementation
 
+Example with vercel ai
+
 ```ts
 import { lens } from "@goat-sdk/plugin-lens";
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
@@ -88,6 +95,18 @@ prompt: "Create a new post saying 'Hello Web3 Social!'"
 });
 ```
 
+More Prompts
+
+```ts
+const prompts = [
+    `Fetch available Lens Protocol accounts for ${process.env.PUBLIC_KEY}`,
+    `Create a new Lens Protocol account with name "Test User" and username "testuser${Date.now()}"`,
+    `Search for Lens Protocol accounts with username containing "lens"`,
+    `Fetch posts from Lens Protocol author ${process.env.PUBLIC_KEY}`,
+    `Create a new Lens Protocol post with content "Testing the Lens Protocol API integration"`,
+    `Explore the latest posts on Lens Protocol`,
+];
+```
 
 ## Use Cases
 
