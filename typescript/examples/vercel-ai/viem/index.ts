@@ -35,7 +35,10 @@ const groq = createGroq({
         model: groq("llama-3.3-70b-versatile"),
         tools: tools,
         maxSteps: 5,
-        prompt: "Get balance of the USDC token for my address",
+        prompt: "Fetch available Lens Protocol accounts for me",
+        onStepFinish({ toolResults, usage, toolCalls }) {
+            console.log("toolCalls : ", toolCalls);
+        },
     });
 
     console.log(result.text);
