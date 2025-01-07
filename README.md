@@ -1,7 +1,7 @@
 
 ![lensai](https://github.com/user-attachments/assets/c2b12d4a-686b-4889-be84-006c6da95bac)
 
-# Lens Protocol AI Tools SDK for Building AI Agents
+# Lens Protocol AgentKit for Building AI Agents
 
 A comprehensive AI-powered SDK for seamless interaction with Lens Protocol through natural language processing, built as a GOAT plugin for universal AI agent framework compatibility.
 
