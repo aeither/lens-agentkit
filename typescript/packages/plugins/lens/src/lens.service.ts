@@ -19,45 +19,53 @@ class GetLensAccountsParameters extends createToolParameters(
             .default(true)
             .describe("Whether to include owned accounts in the response"),
     }),
-) { }
+) {}
 
 class CreateLensAccountParameters extends createToolParameters(
     z.object({
         name: z.string().describe("The name for the Lens account"),
         username: z.string().describe("The username for the Lens account"),
-        appId: z.string().default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1").describe("The app ID for the Lens account"),
+        appId: z
+            .string()
+            .default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1")
+            .describe("The app ID for the Lens account"),
     }),
-) { }
+) {}
 
 class SearchLensAccountsParameters extends createToolParameters(
     z.object({
         localNameQuery: z.string().describe("The username to search for"),
         pageSize: z.enum(["TEN", "TWENTY", "FIFTY"]).optional().default("TEN").describe("Number of results per page"),
     }),
-) { }
+) {}
 
 class GetLensPostsParameters extends createToolParameters(
     z.object({
         authors: z.array(z.string()).describe("Array of author addresses to filter posts by"),
         pageSize: z.enum(["TEN", "TWENTY", "FIFTY"]).optional().default("TEN").describe("Number of results per page"),
     }),
-) { }
+) {}
 
 class CreateLensPostParameters extends createToolParameters(
     z.object({
         content: z.string().describe("The text content of the post"),
-        appId: z.string().default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1").describe("The app ID for the Lens post"),
+        appId: z
+            .string()
+            .default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1")
+            .describe("The app ID for the Lens post"),
     }),
-) { }
+) {}
 
 class ExploreLensPublicationsParameters extends createToolParameters(
     z.object({
-        publicationTypes: z.array(z.enum(["POST"])).default(["POST"]).describe("Types of publications to explore"),
+        publicationTypes: z
+            .array(z.enum(["POST"]))
+            .default(["POST"])
+            .describe("Types of publications to explore"),
         orderBy: z.enum(["LATEST"]).default("LATEST").describe("How to order the publications"),
         limit: z.enum(["TEN", "TWENTY", "FIFTY"]).default("TEN").describe("Number of results to return"),
     }),
-) { }
-
+) {}
 
 export class LensService {
     private urqlClient: Client;
