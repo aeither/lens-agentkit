@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "goat-repo",
+  "name": "lens-agentkit",
   "version": "0.1.0",
   "scripts": {
     "build": "pnpm turbo build",
