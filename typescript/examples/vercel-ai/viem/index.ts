@@ -1,11 +1,11 @@
 import { createGroq } from "@ai-sdk/groq";
 import { generateText } from "ai";
 
-import { http, createWalletClient } from "viem";
+import { createWalletClient, http } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
-import { PEPE, USDC, erc20 } from "@goat-sdk/plugin-lens";
+import { lens } from "@goat-sdk/plugin-lens";
 
 import { viem } from "@goat-sdk/wallet-viem";
 import { chains } from "@lens-network/sdk/viem";
@@ -28,15 +28,15 @@ const groq = createGroq({
 (async () => {
     const tools = await getOnChainTools({
         wallet: viem(walletClient),
-        plugins: [erc20({ tokens: [USDC, PEPE] })],
+        plugins: [lens()],
     });
 
     const result = await generateText({
         model: groq("llama-3.3-70b-versatile"),
         tools: tools,
         maxSteps: 5,
-        prompt: "Fetch available Lens Protocol accounts for me",
-        onStepFinish({ toolResults, usage, toolCalls }) {
+        prompt: `Fetch available Lens Protocol accounts for ${process.env.PUBLIC_KEY}`,
+        onStepFinish({ toolCalls }) {
             console.log("toolCalls : ", toolCalls);
         },
     });

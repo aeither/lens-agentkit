@@ -5,14 +5,8 @@ import { fetchAccountsAvailable } from "@lens-protocol/client/actions";
 import {
     GetLensAccountsParameters
 } from "./parameters";
-import { Token } from "./token";
 
-export class Erc20Service {
-    private tokens: Token[];
-
-    constructor({ tokens }: { tokens?: Token[] } = {}) {
-        this.tokens = tokens ?? [];
-    }
+export class LensService {
 
     @Tool({
         description: "Fetch available Lens Protocol accounts for a wallet address",
@@ -48,5 +42,4 @@ export class Erc20Service {
             throw Error(`Failed to fetch Lens accounts: ${error}`);
         }
     }
-
 }
