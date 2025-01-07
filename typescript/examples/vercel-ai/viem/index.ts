@@ -1,7 +1,7 @@
 import { createGroq } from "@ai-sdk/groq";
 import { generateText } from "ai";
 
-import { http, createWalletClient } from "viem";
+import { createWalletClient, http } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
@@ -36,10 +36,10 @@ const groq = createGroq({
         tools: tools,
         maxSteps: 5,
         // prompt: `Fetch available Lens Protocol accounts for ${process.env.PUBLIC_KEY}`,
-        // prompt: `Create a new Lens Protocol account with name "Test User" and username "testuser${Date.now()}"`,
-        prompt: `Search for Lens Protocol accounts with username containing "lens"`,
-        // prompt: `Fetch posts from Lens Protocol author ${process.env.PUBLIC_KEY}`,
-        // prompt: `Create a new Lens Protocol post with content "Testing the Lens Protocol API integration"`,
+        // prompt: `Create a new Lens Protocol account with name "Test User" and username "testuser${Date.now()}" with private key PRIVATE_KEY`,
+        // prompt: `Search for Lens Protocol accounts with username containing "lens"`,
+        prompt: `Fetch posts from Lens Protocol author ${process.env.PUBLIC_KEY}`,
+        // prompt: `Create a new Lens Protocol post with content "Testing the Lens Protocol API integration" with private key PRIVATE_KEY`,
         // prompt: `Explore the latest posts on Lens Protocol`,
         onStepFinish({ toolCalls }) {
             console.log("toolCalls : ", toolCalls);

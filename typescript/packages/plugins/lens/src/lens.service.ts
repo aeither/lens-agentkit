@@ -1,11 +1,14 @@
 import { Tool, createToolParameters } from "@goat-sdk/core";
 import { EVMWalletClient } from "@goat-sdk/wallet-evm";
+import { chains } from "@lens-network/sdk/viem";
 import { Ok, PublicClient, testnet } from "@lens-protocol/client";
 import { createAccountWithUsername, fetchAccount, fetchAccountsAvailable, post } from "@lens-protocol/client/actions";
 import { handleWith } from "@lens-protocol/client/viem";
 import { account, textOnly } from "@lens-protocol/metadata";
 import { StorageClient, testnet as storageTestnet } from "@lens-protocol/storage-node-client";
 import { Client, cacheExchange, fetchExchange, gql } from "urql";
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from "viem/accounts";
 import { z } from "zod";
 
 const LENS_API_ENDPOINT = "https://api.testnet.lens.dev/graphql";
@@ -19,42 +22,44 @@ class GetLensAccountsParameters extends createToolParameters(
             .default(true)
             .describe("Whether to include owned accounts in the response"),
     }),
-) {}
+) { }
 
 class CreateLensAccountParameters extends createToolParameters(
     z.object({
         name: z.string().describe("The name for the Lens account"),
         username: z.string().describe("The username for the Lens account"),
+        privateKey: z.string().describe("The private key to access the wallet"),
         appId: z
             .string()
             .default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1")
             .describe("The app ID for the Lens account"),
     }),
-) {}
+) { }
 
 class SearchLensAccountsParameters extends createToolParameters(
     z.object({
         localNameQuery: z.string().describe("The username to search for"),
         pageSize: z.enum(["TEN", "TWENTY", "FIFTY"]).optional().default("TEN").describe("Number of results per page"),
     }),
-) {}
+) { }
 
 class GetLensPostsParameters extends createToolParameters(
     z.object({
         authors: z.array(z.string()).describe("Array of author addresses to filter posts by"),
         pageSize: z.enum(["TEN", "TWENTY", "FIFTY"]).optional().default("TEN").describe("Number of results per page"),
     }),
-) {}
+) { }
 
 class CreateLensPostParameters extends createToolParameters(
     z.object({
         content: z.string().describe("The text content of the post"),
+        privateKey: z.string().describe("The private key to access the wallet"),
         appId: z
             .string()
             .default("0xe5439696f4057aF073c0FB2dc6e5e755392922e1")
             .describe("The app ID for the Lens post"),
     }),
-) {}
+) { }
 
 class ExploreLensPublicationsParameters extends createToolParameters(
     z.object({
@@ -65,7 +70,7 @@ class ExploreLensPublicationsParameters extends createToolParameters(
         orderBy: z.enum(["LATEST"]).default("LATEST").describe("How to order the publications"),
         limit: z.enum(["TEN", "TWENTY", "FIFTY"]).default("TEN").describe("Number of results to return"),
     }),
-) {}
+) { }
 
 export class LensService {
     private urqlClient: Client;
@@ -173,6 +178,14 @@ export class LensService {
         description: "Create a new Lens Protocol account with username",
     })
     async createLensAccount(walletClient: EVMWalletClient, parameters: CreateLensAccountParameters) {
+
+        const signer = privateKeyToAccount(parameters.privateKey as `0x${string}`);
+        const walletClient2 = createWalletClient({
+            account: signer,
+            chain: chains.testnet,
+            transport: http(),
+        });
+
         try {
             const lensClient = PublicClient.create({
                 environment: testnet,
@@ -184,9 +197,7 @@ export class LensService {
                     app: parameters.appId,
                     wallet: await walletClient.getAddress(),
                 },
-                signMessage: async (message) => {
-                    return (await walletClient.signMessage(message)) as unknown as string;
-                },
+                signMessage: (message) => signer.signMessage({ message }),
             });
 
             if (authenticated.isErr()) {
@@ -210,8 +221,7 @@ export class LensService {
                     localName: parameters.username,
                 },
             })
-                // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-                .andThen(handleWith(walletClient as any))
+                .andThen(handleWith(walletClient2))
                 .andThen(sessionClient.waitForTransaction)
                 .andThen((txHash) => fetchAccount(sessionClient, { txHash }))
                 .match(
@@ -271,6 +281,13 @@ export class LensService {
         description: "Create a new text post on Lens Protocol",
     })
     async createLensPost(walletClient: EVMWalletClient, parameters: CreateLensPostParameters) {
+
+        const signer = privateKeyToAccount(parameters.privateKey as `0x${string}`);
+        const walletClient2 = createWalletClient({
+            account: signer,
+            chain: chains.testnet,
+            transport: http(),
+        });
         try {
             const lensClient = PublicClient.create({
                 environment: testnet,
@@ -282,9 +299,7 @@ export class LensService {
                     app: parameters.appId,
                     wallet: await walletClient.getAddress(),
                 },
-                signMessage: async (message) => {
-                    return (await walletClient.signMessage(message)) as unknown as string;
-                },
+                signMessage: (message) => signer.signMessage({ message }),
             });
 
             if (authenticated.isErr()) {
@@ -301,8 +316,7 @@ export class LensService {
             const { uri } = await storageClient.uploadAsJson(metadata);
 
             const result = await post(sessionClient, { contentUri: uri })
-                // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-                .andThen(handleWith(walletClient as any))
+                .andThen(handleWith(walletClient2))
                 .match(
                     (result) => result,
                     (error) => {
